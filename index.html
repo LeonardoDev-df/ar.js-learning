@@ -13,14 +13,11 @@
      <a-scene embedded arjs="debugUIEnabled:false;" markerhandler>
         <!-- Cartão 1: Objeto com Pronúncia -->
         <a-marker type="pattern" url="red.patt">
-            <a-entity position="0 0 0" id="marker1">
+            <a-entity  id="marker1">
+                <a-box material="color: yellow;"></a-box>
                 <a-text value="banana" position="-0.5 0.2 0" scale="2 2 2"></a-text>
-                <a-entity
-                    gltf-model="url(yellow_plaster_4k.gltf)"
-                    scale="0.01 0.01 0.01"
-                    position="0 -0.2 0"
-                ></a-entity>
-                 <a-box material="color: yellow;"></a-box>
+              
+                 
             </a-entity>
         </a-marker>
 
