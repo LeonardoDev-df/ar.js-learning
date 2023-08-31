@@ -13,16 +13,25 @@
      <a-scene embedded arjs="debugUIEnabled:false;" markerhandler>
         <!-- Cartão 1: Objeto com Pronúncia -->
 
+         <a-marker type="pattern" url="red.patt"  >
+            <a-entity id="marker1">
+                <a-box material="color: yellow;"></a-box>
+                 <a-text value="banana" scale="3 3 3"></a-text>
+            </a-entity>
+        </a-marker>
+
           <a-marker type="pattern" url="blue.patt">
             <a-entity id="marker2">
-                <a-text value="banana" position="-0.5 0.2 0" scale="2 2 2"></a-text>
-                <a-entity
-                    gltf-model="url(yellow_plaster_4k.gltf)"
-                    scale="0.01 0.01 0.01"
-                    position="0 -0.2 0"
-                    sound="src: url(banana.mp3); autoplay: false"
-                    cursor-listener
-                ></a-entity>
+                 <a-box visible="false" >
+                    <a-text value="banana" position="-0.5 0.2 0" scale="2 2 2"></a-text>
+                    <a-entity
+                        gltf-model="url(yellow_plaster_4k.gltf)"
+                        scale="0.01 0.01 0.01"
+                        position="0 -0.2 0"
+                        sound="src: url(banana.mp3); autoplay: false"
+                        cursor-listener
+                    ></a-entity>
+                </a-box>
             </a-entity>
          </a-marker>
         
