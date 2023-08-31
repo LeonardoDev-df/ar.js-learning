@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>AR Example</title>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"></script>
+    <script src="script.js"></script>
+
+     <a-scene embedded arjs="debugUIEnabled:false;" markerhandler>
+        <!-- Cartão 1: Objeto com Pronúncia -->
+        <a-marker type="pattern" url="red.patt">
+            <a-entity position="0 0 0" id="marker1">
+                <a-text value="banana" position="-0.5 0.2 0" scale="2 2 2"></a-text>
+                <a-entity
+                    gltf-model="url(yellow_plaster_4k.gltf)"
+                    scale="0.01 0.01 0.01"
+                    position="0 -0.2 0"
+                   
+                    cursor-listener
+                ></a-entity>
+            </a-entity>
+        </a-marker>
+        
+        <!-- Outros cartões aqui... -->
+        
+        <!-- Configurações da câmera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+    
+    <script>
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    const soundEl = evt.target;
+                    soundEl.components.sound.playSound();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
